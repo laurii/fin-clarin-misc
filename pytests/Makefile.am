@@ -250,7 +250,7 @@ FOMA_CHECKS=0to3cats.foma 2to4cats.foma 4cats.foma \
 			ab_shuffle_bc.foma id_shuffle_id.foma aid_shuffle_idb.foma \
 			prunable_alphabet.foma non_prunable_alphabet_1.foma non_prunable_alphabet_2.foma id.foma \
 			a2a_or_a2b_or_a2unk.foma a2b_or_b2b_or_unk2b.foma unk2unk_or_id.foma \
-			a_or_id.foma id_star_a_b_c.foma epsilon.foma another_epsilon.foma substituting_transducer.foma substituted_transducer.foma
+			a_or_id.foma id_star_a_b_c.foma epsilon.foma another_epsilon.foma substituting_transducer.foma substituted_transducer.foma abid.pyfoma # testing...
 endif
 
 check_DATA=$(DEFAULT_CHECKS) $(SFST_CHECKS) $(OFST_CHECKS) $(FOMA_CHECKS) $(OL_CHECKS)
@@ -357,25 +357,25 @@ ALL_SRCS=$(FST_TXTS) $(FST_STRINGS) $(FST_PAIRS) $(FST_PAIRSTRINGS) \
 
 # python versions:
 .txt.pyhfst:
-	hfst-txt2fst.py -e '@0@' $< > $@
+	python3 ${top_builddir}/test/tools/hfst-txt2fst.py -e '@0@' -i $< > $@
 
 .txt.pysfst:
-	hfst-txt2fst.py -f sfst -e '@0@' $< > $@
+	python3 ${top_builddir}/test/tools/hfst-txt2fst.py -f sfst -e '@0@' -i $< > $@
 
 .txt.pyofst:
-	hfst-txt2fst.py -f openfst-tropical -e '@0@' $< > $@
+	python3 ${top_builddir}/test/tools/hfst-txt2fst.py -f openfst-tropical -e '@0@' -i $< > $@
 
 .txt.pyfoma:
-	hfst-txt2fst.py -f foma -e '@0@' $< > $@
+	python3 ${top_builddir}/test/tools/hfst-txt2fst.py -f foma -e '@0@' -i $< > $@
 
 .txt.pyhfstol:
-	hfst-txt2fst.py -e '@0@' -i $< | hfst-fst2fst.py -w -o $@
+	python3 ${top_builddir}/test/tools/hfst-txt2fst.py -e '@0@' -i $< | python3 hfst-fst2fst.py -w -o $@
 
 .txt.pygenhfstol:
-	hfst-txt2fst.py -e '@0@' -i $< | hfst-invert.py | hfst-fst2fst.py -w -o $@
+	python3 ${top_builddir}/test/tools/hfst-txt2fst.py -e '@0@' -i $< | python3 hfst-invert.py | python3 hfst-fst2fst.py -w -o $@
 
 .txt.pypmatch:
-	hfst-pmatch2fst.py $< > $@
+	python3 ${top_builddir}/test/tools/hfst-pmatch2fst.py $< > $@
 
 
 EXTRA_FILES=cat2dog.substitute cat.strings cat.txt cats_and_dogs.xre utf-8.strings latin-1.strings c_a_t.strings dos.strings not-contains-a.xre not-contains-a-comment-emptyline.xre parallel-left-arrow-multicom-emptyline.xre  parallel-left-arrow.xre cat.prolog negative_epsilon_cycles.txt no_negative_epsilon_cycles.txt substituting_transducer.txt substituted_transducer.txt

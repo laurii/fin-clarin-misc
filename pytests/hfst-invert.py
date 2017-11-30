@@ -1,6 +1,4 @@
 import hfst
-from sys import argv
-
 istr = hfst.HfstInputStream()
 ostr = hfst.HfstOutputStream()
 
