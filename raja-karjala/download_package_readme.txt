@@ -35,7 +35,7 @@ Tiedostojen nimeämiskäytäntö:
 		  		pitäjän informantin 09 (nainen) näyte B
 
 {SKNA}: Suomen kielen nauhoitearkiston tunniste (signum), esim. "SKNA_7439"
-{NAUHA}: Kelanauhan tunniste, esim. "2b", joka tarkoittaa puhujan 2 nauhoitetta b
+{NAUHA}: Kelanauhan tunniste, esim. "2b"
 {wav|txt|TextGrid}: Tiedoston tyyppi
 
 
