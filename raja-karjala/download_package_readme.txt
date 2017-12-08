@@ -1,4 +1,4 @@
-Raja-Karjalan korpus (28.11.2017)
+Raja-Karjalan korpus (8.12.2017)
 
 Aineiston lisenssi on CLARIN RES ... (urn:nbn:fi:...)
 Lisätietoa aineistosta: urn:nbn:fi...
@@ -16,16 +16,31 @@ Litteraatiotiedostojen tyyppi: UTF-8 Unicode (with BOM) text[, with very long li
 
 Tiedostojen nimeämiskäytäntö:
 
-  {Pitäjä}/{pitäjä}_{wav|txt|textgrid}/{Pitäjä}_{TUNNISTE}_{SKNA}.{wav|txt|TextGrid}
+{Pitäjä}/{pitäjä}_{wav|txt|textgrid}/{Pitäjä}_{TUNNISTE}_{SKNA}_{NAUHA}.{wav|txt|TextGrid}
 
-{Pitäjä}: pitäjän nimi (ilman ääkkösiä), esim. Korpiselka
-{pitäjä}: pitäjän nimi pienellä alkukirjaimella (ilman ääkkösiä), esim. korpiselka
-{TUNNISTE}: tiedoston tunniste, esim. "05mC" tai "08nB_09nB" (m = mies, n = nainen) nimeämislogiikka???
-{SKNA}: Suomen kielen nauhoitearkiston tunniste, esim. "SKNA_7439_2b"
-{wav|txt|textgrid}: hakemiston sisältämien tiedostojen tyyppi
-{wav|txt|TextGrid}: tiedoston tyyppi
+{Pitäjä}: Keruupaikkakunnan nimi (ilman ääkkösiä), esim. Korpiselka
+{pitäjä}: Keruupaikkakunnan nimi pienellä alkukirjaimella (ilman ääkkösiä), esim. korpiselka
+{wav|txt|textgrid}: Hakemiston sisältämien tiedostojen tyyppi
+
+{TUNNISTE}: Tiedoston tunniste, joka koostuu
+
+	    - pitäjäkohtaisesta informantin tunnuksesta (numero)
+	    - informantin sukupuolesta (m=mies, n=nainen)
+	    - informanttikohtaisesta näytteen tunnuksesta (iso kirjain), jos samalta informantilta on useita näytteitä
+	    
+	    Jos tiedostossa on useampi informantti, heidät on erotettu alaviivalla.
+
+	    Esim. "05mC":       pitäjän informantin 05 (mies) näyte C
+	          "08nB_09nB":  pitäjän informantin 08 (nainen) näyte B sekä
+		  		pitäjän informantin 09 (nainen) näyte B
+
+{SKNA}: Suomen kielen nauhoitearkiston tunniste (signum), esim. "SKNA_7439"
+{NAUHA}: Kelanauhan tunniste, esim. "2b", joka tarkoittaa puhujan 2 nauhoitetta b
+{wav|txt|TextGrid}: Tiedoston tyyppi
+
 
 Kielivara sisältää henkilötietoja.
 
 https://www.kielipankki.fi
 kielipankki@csc.fi
+
