@@ -1,8 +1,7 @@
-Raja-Karjalan korpus (12.12.2017)
+Raja-Karjalan korpus (XX.XX.2018)
 
-Aineiston lisenssi on CLARIN RES ... (urn:nbn:fi:...)
-Lisätietoa aineistosta: urn:nbn:fi...
-
+Aineiston lisenssi on CC BY
+Lisätietoa aineistosta: http://urn.fi/urn:nbn:fi:lb-2017121322
 
 Tämä kansio sisältää Raja-Karjalan korpuksen. Korpus käsittää haastatteluja
 kuudelta eri pitäjältä, jotka kaikki ovat omissa erillissä alikansioissaan.
