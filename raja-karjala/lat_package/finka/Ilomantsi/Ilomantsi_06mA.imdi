@@ -61,7 +61,7 @@
                         Type="ClosedVocabulary"/>
             </CommunicationContext>
             <Languages>
-               <Description LanguageId="ISO639-3:fin" Link="">Raja-Karjalan murteet: {Pitäjä}</Description>
+               <Description LanguageId="ISO639-3:fin" Link="">Raja-Karjalan murteet: Ilomantsi</Description>
             </Languages>
             <Keys>
         </Keys>
