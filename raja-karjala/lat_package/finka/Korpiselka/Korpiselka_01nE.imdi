@@ -8,8 +8,8 @@
                 Version="0"
                 xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
   <Session>
-      <Name>Korpiselka_01nA</Name>
-      <Title>Korpiselka_01nA_SKNA_3034_2a</Title>
+      <Name>Korpiselka_01nE</Name>
+      <Title>Korpiselka_01nE_SKNA_7476_1b</Title>
       <Date>Unspecified</Date>
       <Description LanguageId="" Link=""/>
       <MDGroup>
@@ -79,7 +79,7 @@
          
          
          <MediaFile>
-            <ResourceLink>Korpiselka_01nA/Korpiselka_01nA_SKNA_3034_2a.wav</ResourceLink>
+            <ResourceLink>Korpiselka_01nE/Korpiselka_01nE_SKNA_7476_1b.wav</ResourceLink>
             <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml"
                   Type="ClosedVocabulary">audio</Type>
             <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml"
@@ -110,7 +110,7 @@
         </Keys>
          </MediaFile>
          <MediaFile>
-            <ResourceLink>Korpiselka_01nA/Korpiselka_01nA_SKNA_3034_2a.m4a</ResourceLink>
+            <ResourceLink>Korpiselka_01nE/Korpiselka_01nE_SKNA_7476_1b.m4a</ResourceLink>
             <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml"
                   Type="ClosedVocabulary">audio</Type>
             <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml"
@@ -141,7 +141,7 @@
         </Keys>
          </MediaFile>
          <WrittenResource>
-            <ResourceLink>Korpiselka_01nA/Korpiselka_01nA_SKNA_3034_2a.TextGrid</ResourceLink>
+            <ResourceLink>Korpiselka_01nE/Korpiselka_01nE_SKNA_7476_1b.TextGrid</ResourceLink>
             <MediaResourceLink/>
             <Date>Unspecified</Date>
             <Type Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Type.xml"
