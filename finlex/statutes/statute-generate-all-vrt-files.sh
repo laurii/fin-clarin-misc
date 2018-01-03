@@ -2,7 +2,22 @@
 
 if [ "$1" = "--help" -o "$1" = "-h" ]; then
     echo ""
-    echo "Usage: statute-generate-all-vrt-files.sh [--fin|--swe] --from-year YEAR --to-year YEAR --only-file FILE"
+    echo "Usage: statute-generate-all-vrt-files.sh"
+    echo "       [--fin|--swe] --from-year YEAR --to-year YEAR --only-file FILE"
+    echo ""
+    echo "Purpose: generate a vrt file for each statute xml file."
+    echo ""
+    echo "Option --fin or --swe defines whether files in Finnish or Swedish"
+    echo "are processed. Either option must be used."
+    echo "If --from-year and --to-year are omitted, all years are processed."
+    echo "If --only-file is used, only FILE is processed."
+    echo ""
+    echo "The script assumes that statutes for a given year YYYY and language"
+    echo "(fi = Finnish, sv = Swedish) are in directory 'asd/[fi|sv]/YYYY'."
+    echo ""
+    echo "The script generates a *.vrt file for each *.xml file. During this,"
+    echo "intermediary files named *.ext; *.punct; *.sent are also generated."
+    echo "They must be manually removed from a distribution package."
     echo ""
     exit 0
 fi
@@ -32,6 +47,10 @@ do
     elif [ "$to_year" = "next..." ]; then
 	to_year=$arg
     elif [ "$only_file" = "next..." ]; then
+	if ! (ls $arg > /dev/null 2> /dev/null); then
+	    echo "Error: file '"$arg"' given with --only-file not found (full relative path must be given), exiting..."
+	    exit 1
+	fi
 	only_file=$arg
     fi
 done
@@ -42,15 +61,16 @@ if [ "$url_lang" = "" ]; then
 fi
 
 
-for dir in ${dir_lang}/*
+for dir in asd/${dir_lang}/*
 do
 
-    year=`echo $dir | perl -pe 's/(?:fi)|(?:swe)//; s/\///g'`
+    year=`echo $dir | perl -pe 's/(?:fi)|(?:sv)//; s/asd//; s/\///g'`
     if [ "$from_year" != "" ]; then
 	if [ "$year" -lt "$from_year" ]; then
 	    continue
 	fi
-    elif [ "$to_year" != "" ]; then
+    fi
+    if [ "$to_year" != "" ]; then
 	if [ "$year" -gt "$to_year" ]; then
 	    continue
 	fi
@@ -65,19 +85,21 @@ do
 	    fi
 	fi	
     
-	prefile=`echo $f | perl -pe 's/\.xml/\.pre/'`
+	#prefile=`echo $f | perl -pe 's/\.xml/\.pre/'`
 	extfile=`echo $f | perl -pe 's/\.xml/\.ext/'`
 	punctfile=`echo $f | perl -pe 's/\.xml/\.punct/'`
 	sentfile=`echo $f | perl -pe 's/\.xml/\.sent/'`
 	vrtfile=`echo $f | perl -pe 's/\.xml/\.vrt/'`
 	
 	echo "processing xml file "$f"..."
-	
-	if ! (./statute-preprocess.pl < $f > $prefile); then
-	    echo "Error: in statute-preprocess.pl, exiting..."
-	    exit 1
-	fi
-	if ! (./statute-extract-text.pl < $prefile > $extfile); then
+
+	# preprocessing has already been done
+	#if ! (./statute-preprocess.pl < $f > $prefile); then
+	#    echo "Error: in statute-preprocess.pl, exiting..."
+	#    exit 1
+	#fi
+	#if ! (./statute-extract-text.pl < $prefile > $extfile); then
+	if ! (./statute-extract-text.pl < $f > $extfile); then
 	    echo "Error: in statute-extract-text.pl, exiting..."
 	    exit 1
 	fi
@@ -102,13 +124,13 @@ do
 	if [ "$length" = "0" ]; then
 	    datefrom=$url_year"0101"
 	    dateto=$url_year"1231"
-	    echo "could not find date in file '"$1"', setting it to "$datefrom" - "$dateto" for output file '"$2"'..."
+	    echo "could not find date in file '"$f"', setting it to "$datefrom" - "$dateto" for output file '"$vrtfile"'..."
 	elif [ "$datefrom" = "21000101" ]; then
 	    datefrom=$url_year"0101"
 	    dateto=$url_year"1231"
-	    echo "date '2100-01-01' given in file '"$1"', setting it to "$datefrom" - "$dateto" for output file '"$2"'..."
+	    echo "date '2100-01-01' given in file '"$f"', setting it to "$datefrom" - "$dateto" for output file '"$vrtfile"'..."
 	elif [ "$length" -gt 8 -o "$length" -lt 8 ]; then
-	    echo "invalid date in file '"$1"' (output file '"$2"'), exiting..."
+	    echo "invalid date in file '"$f"' (output file '"$vrtfile"'), exiting..."
 	    exit 1
 	else
 	    dateto=$datefrom

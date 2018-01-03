@@ -9,9 +9,9 @@ my $continu = 0; # for handling statutes
 
 foreach my $line ( <STDIN> ) {
 
-    if ( $line =~ /<saa:SaadosOsa>/ || $continu == 1 || $line =~ /<\/tau:table>/ )
+    if ( $line =~ /<saa:SaadosOsa>/ || $continu == 1 || $line =~ /<\/tau:table>/ || $line =~ /<asi:AllekirjoitusOsa>/)
     {
-	unless ( $line =~ /<\/saa:SaadosOsa>/ )
+	unless ( $line =~ /<\/saa:SaadosOsa>/ || $line =~ /<\/asi:AllekirjoitusOsa>/)
 	{
 	    $continu = 1;
 	}
@@ -28,7 +28,7 @@ foreach my $line ( <STDIN> ) {
 	}
 	
 	# special symbol <> means end of sentence (in titles)
-	if ( $line =~ /<\/saa:SaadosOtsikkoKooste>/ || $line =~ /<\/saa:SaadosNimeke>/ )
+	if ( $line =~ /<\/saa:SaadosOtsikkoKooste>/ || $line =~ /<\/saa:SaadosNimeke>/ || $line =~ /<\/saa:SaadosKappaleKooste>/ )
 	{
 	    $line .= "<>";
 	}
