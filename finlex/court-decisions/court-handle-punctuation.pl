@@ -31,6 +31,10 @@ foreach my $line ( <STDIN> ) {
 	# separate content inside parentheses from parentheses
 	$line =~ s/\(([^\)]+)\)/\( $1 \)/g;
 
+	# separate double quotes
+	$line =~ s/"/ " /g;
+	# todo: ?, !, even smileys possible inside quotes
+
 	# previous replacements might have generated too many spaces
 	$line =~ s/ +/ /g;
 	
@@ -39,7 +43,6 @@ foreach my $line ( <STDIN> ) {
 	$line =~ s/ +$//g;
 	$line =~ s/ /\n/g;
 	
-	# ?, !, and " not used in law text?
     }
 
     print $line;

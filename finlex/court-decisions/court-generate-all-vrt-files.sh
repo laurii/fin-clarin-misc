@@ -10,6 +10,7 @@ fi
 url_lang=""
 dir_lang=""
 court=""
+courtdir=""
 
 for arg in "$@"
 do
@@ -21,8 +22,10 @@ do
 	dir_lang="sv"
     elif [ "$arg" = "--kko" ]; then
 	court="--kko"
+	courtdir="kko"
     elif [ "$arg" = "--kho" ]; then
 	court="--kho"
+	courtdir="kho"
     fi
 done
 
@@ -36,7 +39,7 @@ if [ "$court" = "" ]; then
     exit 1
 fi
 
-for f in ${dir_lang}/*/*.xml
+for f in ${courtdir}/${dir_lang}/*/*.xml
 do
     echo "processing xml file "$f"..."
     if ! (./court-process-xml-to-vrt.sh $f `echo $f | perl -pe 's/\.xml/\.vrt/g;'` ${url_lang} ${court} ); then
