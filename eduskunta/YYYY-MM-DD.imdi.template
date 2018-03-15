@@ -8,11 +8,11 @@
                 Version="0"
                 xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
   <Session>
-      <Name>2014-06-23</Name>
-      <Title>Täysistunto 23.6.2014 - Plenary session June 23rd 2014</Title>
+      <Name>{YYYY}-{MM}-{DD}</Name>
+      <Title>Täysistunto {DD}.{MM}.{YYYY} - Plenary session {YYYY}/{MM}/{DD}</Title>
       <Date>Unspecified</Date>
-      <Description LanguageId="ISO639-3:fin" Link="">Eduskunnan 69. täysistunto maanantaina 23. kesäkuuta 2014. Sisältää istunnon videotiedoston annotointeineen.</Description>
-      <Description LanguageId="ISO639-3:eng" Link="">69th plenary session of Finnish Parliament on Monday June the 23rd 2014. The material includes video file of the session in annotated format.</Description>
+      <Description LanguageId="ISO639-3:fin" Link="">Eduskunnan {ORDINAL_FI} täysistunto {DAY_AND_MONTH_FI} {YYYY}. Sisältää istunnon videotiedoston annotointeineen.</Description>
+      <Description LanguageId="ISO639-3:eng" Link="">{ORDINAL_EN} plenary session of Finnish Parliament on {DAY_AND_MONTH_EN} {YYYY}. The material includes video file of the session in annotated format.</Description>
       <MDGroup>
          <Location>
             <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml"
@@ -73,12 +73,12 @@
       </MDGroup>
       <Resources>
          <MediaFile>
-            <ResourceLink>YYYY-MM-DD/YYYY-MM-DD.mp4</ResourceLink>
+            <ResourceLink>{YYYY}-{MM}-{DD}/{YYYY}-{MM}-{DD}.mp4</ResourceLink>
             <Type Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Type.xml"
                   Type="ClosedVocabulary">video</Type>
             <Format Link="http://www.mpi.nl/IMDI/Schema/MediaFile-Format.xml"
                     Type="OpenVocabulary">video/mp4</Format>
-            <Size>144615KB</Size>
+            <Size>{MP4_SIZE}KB</Size>
             <Quality Link="http://www.mpi.nl/IMDI/Schema/Quality.xml"
                      Type="ClosedVocabulary">Unspecified</Quality>
             <RecordingConditions/>
@@ -104,7 +104,7 @@
         </Keys>
          </MediaFile>
          <WrittenResource>
-            <ResourceLink>YYYY-MM-DD/YYYY-MM-DD.eaf</ResourceLink>
+            <ResourceLink>{YYYY}-{MM}-{DD}/{YYYY}-{MM}-{DD}.eaf</ResourceLink>
             <MediaResourceLink/>
             <Date>Unspecified</Date>
             <Type Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Type.xml"
@@ -113,7 +113,7 @@
                      Type="OpenVocabularyList"/>
             <Format Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Format.xml"
                     Type="OpenVocabulary">text/x-eaf+xml</Format>
-            <Size>10151KB</Size>
+            <Size>{EAF_SIZE}KB</Size>
             <Validation>
                <Type Link="http://www.mpi.nl/IMDI/Schema/Validation-Type.xml"
                      Type="ClosedVocabulary"/>
@@ -147,7 +147,7 @@
          </WrittenResource>
          
          <WrittenResource>
-            <ResourceLink>YYYY-MM-DD/Poytakirja.html</ResourceLink>
+            <ResourceLink>{YYYY}-{MM}-{DD}/Poytakirja.html</ResourceLink>
             <MediaResourceLink/>
             <Date>Unspecified</Date>
             <Type Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Type.xml"
@@ -156,7 +156,7 @@
                      Type="OpenVocabularyList"/>
             <Format Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Format.xml"
                     Type="OpenVocabulary">text/html</Format>
-            <Size>0KB</Size>
+            <Size>{HTML_SIZE}KB</Size>
             <Validation>
                <Type Link="http://www.mpi.nl/IMDI/Schema/Validation-Type.xml"
                      Type="ClosedVocabulary"/>
@@ -189,7 +189,7 @@
             <Keys/>
          </WrittenResource>
          <WrittenResource>
-            <ResourceLink>YYYY-MM-DD/YYYY-MM-DD.txt</ResourceLink>
+            <ResourceLink>{YYYY}-{MM}-{DD}/{YYYY}-{MM}-{DD}.txt</ResourceLink>
             <MediaResourceLink/>
             <Date>Unspecified</Date>
             <Type Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Type.xml"
@@ -198,7 +198,7 @@
                      Type="OpenVocabularyList"/>
             <Format Link="http://www.mpi.nl/IMDI/Schema/WrittenResource-Format.xml"
                     Type="OpenVocabulary">text/plain</Format>
-            <Size>0KB</Size>
+            <Size>{TXT_SIZE}KB</Size>
             <Validation>
                <Type Link="http://www.mpi.nl/IMDI/Schema/Validation-Type.xml"
                      Type="ClosedVocabulary"/>
