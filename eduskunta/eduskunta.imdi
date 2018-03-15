@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<METATRANSCRIPT xmlns="http://www.mpi.nl/IMDI/Schema/IMDI"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                Date="2018-02-22"
+                FormatId="IMDI 3.03"
+                Originator="Arbil.2.6.1109:"
+                Type="CORPUS"
+                Version="0"
+                xsi:schemaLocation="http://www.mpi.nl/IMDI/Schema/IMDI ./IMDI_3.0.xsd">
+        <Corpus>
+                <Name>eduskunta</Name>
+                <Title>Eduskunnan täysistunnot - Parliament plenary sessions</Title>
+                <Description LanguageId="ISO639-3:fin" Link="">Eduskunnan täysistunnot ajalta syksy 2008 - kevät 2015.
+		Aineisto sisältää istuntojen videotiedostot annotoidussa muodossa.
+		URN: http://urn.fi/urn:nbn:fi:lb-201407305</Description>
+		<Description LanguageId="ISO639-3:eng" Link="">Plenary sessions of Finnish Parliament from fall 2008 to spring 2015.
+		The material includes videofiles of the sessions in annotated format.
+		URN: http://urn.fi/urn:nbn:fi:lb-201407305</Description>
+      <CorpusLink Name="">eduskunta/YYYY-SEASON.imdi</CorpusLink>
+   </Corpus>
+</METATRANSCRIPT>
