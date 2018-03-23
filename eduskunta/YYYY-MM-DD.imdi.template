@@ -11,8 +11,8 @@
       <Name>{YYYY}-{MM}-{DD}</Name>
       <Title>Täysistunto {DD}.{MM}.{YYYY} - Plenary session {YYYY}/{MM}/{DD}</Title>
       <Date>Unspecified</Date>
-      <Description LanguageId="ISO639-3:fin" Link="">Eduskunnan {ORDINAL_FI} täysistunto {DAY_AND_MONTH_FI} {YYYY}. Sisältää istunnon videotiedoston annotointeineen.</Description>
-      <Description LanguageId="ISO639-3:eng" Link="">{ORDINAL_EN} plenary session of Finnish Parliament on {DAY_AND_MONTH_EN} {YYYY}. The material includes video file of the session in annotated format.</Description>
+      <Description LanguageId="ISO639-3:fin" Link="">Eduskunnan {ORDINAL_FI} täysistunto {DATE_FI}. Sisältää istunnon videotiedoston annotointeineen.</Description>
+      <Description LanguageId="ISO639-3:eng" Link="">{ORDINAL_EN} plenary session of Finnish Parliament on {DATE_EN}. The material includes video file of the session in annotated format.</Description>
       <MDGroup>
          <Location>
             <Continent Link="http://www.mpi.nl/IMDI/Schema/Continents.xml"
